@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.NewCommands;
+import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.Subsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -21,6 +22,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Subsystem m_exampleSubsystem = new Subsystem();
+
+  private final Elevator m_elevator = new Elevator();
 
   private final NewCommands m_autoCommand = new NewCommands(m_exampleSubsystem, 0);
 
