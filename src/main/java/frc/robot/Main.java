@@ -27,6 +27,5 @@ public final class Main {
     System.out.println(joy.getX());
     System.out.println(joy.getY());
     System.out.println(joy.getZ());
-
   }
 }

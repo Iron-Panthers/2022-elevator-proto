@@ -4,19 +4,24 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Joystick;
+import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Elevator;
-import frc.robot.Constants;
 
-public class ElevatorSpeedCommand extends CommandBase {
-  private final Joystick joystick;
-  private final Elevator elevator;
-  /** Creates a new ElevatorSpeedCommand. */
-  public ElevatorSpeedCommand(Joystick joystick, Elevator elevator) {
-    this.joystick = joystick;
-    this.elevator = elevator;
-    addRequirements(elevator);
+/** An example command that uses an example subsystem. */
+public class ExampleCommand extends CommandBase {
+  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+  private final ExampleSubsystem m_subsystem;
+
+  /**
+   * Creates a new ExampleCommand.
+   *
+   * @param subsystem The subsystem used by this command.
+ * @param i
+   */
+  public ExampleCommand(ExampleSubsystem subsystem, int i) {
+    m_subsystem = subsystem;
+    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(subsystem);
   }
 
   // Called when the command is initially scheduled.
@@ -25,11 +30,7 @@ public class ElevatorSpeedCommand extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute(){
-    // forward => positive, backwards => negative
-    double power = -joystick.getY();
-    elevator.goSpeed(power);
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
