@@ -14,9 +14,9 @@ package frc.robot;
  */
 public final class Constants {
     public final class DriveSubsystem{
-        public static final int JoystickMove = 12;
-        public static final int MotorPower = 20;
-        public static final double NewPower = 30;
+        public static final int JoystickMove = 0;
+       // public static final int MotorPower = 4;
+        //public static final double NewPower = 6;
         public static final double JoyStickX = 0;
         public static final double JoyStickY = 0;
         public static final double JoyStickZ = 0;

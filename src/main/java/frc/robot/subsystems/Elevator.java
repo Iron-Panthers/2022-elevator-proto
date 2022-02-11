@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Elevator extends SubsystemBase{
     private final CANSparkMax leader ;
-    private final CANSparkMax follower1 = new CANSparkMax(10, MotorType.kBrushless);
-    private final CANSparkMax follower2 = new CANSparkMax(11, MotorType.kBrushless);
+    private final CANSparkMax follower1 = new CANSparkMax(13, MotorType.kBrushless);
+    private final CANSparkMax follower2 = new CANSparkMax(14, MotorType.kBrushless);
     private final SparkMaxPIDController leaderPIDController;
 
     public Elevator(){
-        leader = new CANSparkMax(9, MotorType.kBrushless);
+        leader = new CANSparkMax(15, MotorType.kBrushless);
         follower1.follow(leader, /*invert:*/false);
         follower2.follow(leader, false);
         leaderPIDController = leader.getPIDController();

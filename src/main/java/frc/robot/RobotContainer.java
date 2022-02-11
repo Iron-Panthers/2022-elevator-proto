@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.ElevatorSpeed;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -31,13 +32,15 @@ public class RobotContainer {
 
   private final Joystick JoystickA = new Joystick(Constants.DriveSubsystem.JoystickMove);
 
-  private final JoystickButton Test = new JoystickButton(JoystickA, Constants.DriveSubsystem.MotorPower);
-  Joystick joy = new Joystick(0);
+  //private final JoystickButton Test = new JoystickButton(JoystickA, Constants.DriveSubsystem.MotorPower);
+  //Joystick joy = new Joystick(0);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+    //setup default joystick moves
+    m_elevator.setDefaultCommand(new ElevatorSpeed(JoystickA, m_elevator));
   }
 
   /**
@@ -47,7 +50,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    Test.whileHeld(new ExampleCommand(runMotor, Constants.DriveSubsystem.MotorPower));
+  //  Test.whileHeld(new ExampleCommand(runMotor, Constants.DriveSubsystem.MotorPower));
   }
 
   /**
